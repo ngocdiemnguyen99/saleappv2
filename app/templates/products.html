@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lí sản phẩm</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+</head>
+<body>
+<div class="container">
+    <table class="table">
+        {% for p in products %}
+        <tr>
+            <td>
+                <img width="120" src="{{p.images}}" alt="{{p.name}}">
+            </td>
+            <td>
+                <h1>{{p.name}}</h1>
+            </td>
+            <td>
+                <p>{{p.description}}</p>
+            </td>
+            <td>
+                {{p.price}} VNĐ
+            </td>
+            <td>
+                {{p.category_id}}
+            </td>
+            <td>
+                <a href="#">Cập nhật</a>
+                <a href="#">Xóa</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+</body>
+</html>
